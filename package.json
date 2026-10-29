@@ -1,0 +1,65 @@
+{
+  "name": "aetheris-launcher",
+  "version": "1.0.0",
+  "description": "Launcher Aetheris",
+  "main": "src/main.js",
+  "author": "Aetheris",
+  "license": "MIT",
+  "dependencies": {
+    "@xmcl/core": "^2.14.1",
+    "@xmcl/installer": "^6.1.0",
+    "@xmcl/user": "^4.2.0",
+    "adm-zip": "0.5.16",
+    "minecraft-launcher-core": "^3.18.2",
+    "msmc": "^5.0.5"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac zip dmg --arm64 --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "fr.aetheris.launcher",
+    "productName": "Aetheris",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**",
+      "build/**",
+      "config.json",
+      "package.json",
+      "seed/**"
+    ],
+    "mac": {
+      "category": "public.app-category.games",
+      "icon": "build/logo.png",
+      "identity": null,
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "Aetheris utilise le micro pour le chat vocal en jeu."
+      },
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        },
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ]
+    },
+    "dmg": {
+      "title": "Aetheris"
+    }
+  }
+}

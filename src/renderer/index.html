@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Aetheris</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="bar"><span class="drag"></span><button id="min">–</button><button id="close">✕</button></div>
+<main>
+  <section class="hero">
+    <img src="logo.png" class="logo" alt="">
+    <h1>AETHERIS</h1>
+    <p class="tag">Serveur RP · Minecraft 1.21.1</p>
+  </section>
+  <section class="panel">
+    <div id="logged" hidden>
+      <div class="user"><span id="uname"></span><a href="#" id="logout">Se déconnecter</a></div>
+      <button id="play" class="big">JOUER</button>
+      <div class="opt">
+        <label>Mémoire (RAM) : <b id="ramv"></b> Go</label>
+        <input type="range" id="ram" min="2" max="16" step="1">
+        <label class="chk"><input type="checkbox" id="auto"> Rejoindre le serveur automatiquement</label>
+        <a href="#" id="folder">Ouvrir le dossier du jeu</a>
+        <a href="#" id="modsToggle">Mes mods (<span id="modsCount">0</span>)</a>
+        <div id="modsPanel" hidden>
+          <p class="hint">Ajoute ici des mods <b>côté client</b> (minimap, shaders, interface…). Un mod qui ajoute du contenu doit aussi être sur le serveur.</p>
+          <ul id="modsList"></ul>
+          <div class="row"><button id="modsAdd" class="small">Ajouter des mods…</button><a href="#" id="modsFolder">Ouvrir le dossier</a></div>
+        </div>
+      </div>
+    </div>
+    <div id="anon" hidden>
+      <p>Connecte ton compte Microsoft (celui qui possède Minecraft Java) pour jouer.</p>
+      <button id="login" class="big">SE CONNECTER</button>
+    </div>
+    <div id="prog" hidden><div class="track"><div id="fill"></div></div><p id="ptext"></p></div>
+    <p id="err" class="err" hidden></p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body></html>

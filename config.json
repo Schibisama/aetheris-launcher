@@ -1,0 +1,13 @@
+{
+  "launcherName": "Aetheris",
+  "manifestUrl": "https://raw.githubusercontent.com/Schibisama/aetheris-files/main/client/manifest.json",
+  "serverAddress": "",
+  "microsoftClientId": "00000000402b5328",
+  "defaultRamMb": 6144,
+  "javaFallbackUrl": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jre_x64_windows_hotspot_21.0.5_11.zip",
+  "javaUrls": {
+    "win32-x64": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jre_x64_windows_hotspot_21.0.5_11.zip",
+    "darwin-arm64": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jre_aarch64_mac_hotspot_21.0.5_11.tar.gz",
+    "darwin-x64": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jre_x64_mac_hotspot_21.0.5_11.tar.gz"
+  }
+}
