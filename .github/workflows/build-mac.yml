@@ -12,12 +12,7 @@ jobs:
         with: { node-version: 22 }
       - name: npm install
         run: |
-          set +e
-          for p in "@xmcl/core@2.14.1" "@xmcl/installer@6.1.0" "@xmcl/user@4.2.0" "adm-zip@0.6.1" "minecraft-launcher-core@3.18.2" "msmc@5.0.5" "undici@7.2.3" "electron@33.2.1" "electron-builder@25.1.8"; do
-            npm install --no-save --no-audit --no-fund "$p" > npm.log 2>&1 || echo "::error::FAIL $p : $(grep -m3 'npm error' npm.log | tr '\n' ' ')"
-          done
-          rm -rf node_modules package-lock.json
-          npm install --no-audit --no-fund > npm.log 2>&1 || { echo "::error::FULL $(grep 'npm error' npm.log | head -8 | tr '\n' ' ')"; exit 1; }
+          npm install --no-audit --no-fund > npm.log 2>&1 || { echo "::error::$(grep 'npm error' npm.log | head -8 | tr '\n' ' ')"; exit 1; }
       - run: npx electron-builder --mac zip dmg --arm64 --x64 --publish never
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
